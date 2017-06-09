@@ -5,16 +5,21 @@ var g_a=[[],[],[],[],[],[],[]];
 var g_b=[[],[],[],[],[],[],[]];
 var g_c=[[],[],[],[],[],[],[]];
 var g_d=[];
+var timeimg;
+var timeline;
+var timeline2;
+var gap=300;
 
 var data=[213,197,166,217,210,267,730];
+p.preload=function() {
+	timeimg=p.loadImage("lib/img/time.png");
+	timeline=p.loadImage("lib/img/timeline.png");
+	timeline2=p.loadImage("lib/img/timeline2.png");
+}
 
 
 p.setup=function(){
 	myCanvas = p.createCanvas(1170, 2600);
-
-	// myCanvas.mouseOver(p.loop());
-	// myCanvas.mouseOut(p.noLoop());
-
 	bs_510 = new p.ballSys(0,40,data[0]);
 	bs_610 = new p.ballSys(data[0],40,data[1]);
 	bs_710 = new p.ballSys(data[0]+data[1],40,data[2]);
@@ -22,6 +27,12 @@ p.setup=function(){
 	bs_910 = new p.ballSys(data[0]+data[1]+data[2]+data[3],40,data[4]);
 	bs_1010 = new p.ballSys(data[0]+data[1]+data[2]+data[3]+data[4],40,data[5]);
 	bs_1111 = new p.ballSys(data[0]+data[1]+data[2]+data[3]+data[4]+data[5],40,data[6]);
+
+	myP = p.createP('平日销售量（7件）');
+	myP.position(310,2160);
+
+	myP11 = p.createP('双十一销量（730件）');
+	myP11.position(680,2330);
 
 
 	p.iniGroup();
@@ -40,7 +51,7 @@ p.draw=function(){
 	bs_1010.run();
 	bs_1111.run();
 
-	if (document.body.scrollTop<4600){
+	if (document.body.scrollTop<1840+gap){
 		// p.ellipse(100,100,100,100);
 		bs_510.move(g_a[0],200,78,85);
 		bs_610.move(g_a[1],200,78,85);
@@ -51,7 +62,8 @@ p.draw=function(){
 		bs_1111.move(g_a[6],200,78,85);
 	}
 
-	if ((document.body.scrollTop>4600)&(document.body.scrollTop<4900)){
+	if ((document.body.scrollTop>1840+gap)&(document.body.scrollTop<2100+gap)){
+	    p.image(timeimg, 40, 90,timeimg.width/1.7,timeimg.height/1.7);
 		// p.ellipse(100,100,100,100);
 		bs_510.move(g_a[0],10,58,82);
 		bs_610.move(g_a[1],40,58,82);
@@ -63,7 +75,8 @@ p.draw=function(){
 	}
 
 
-	if ((document.body.scrollTop>4900)&(document.body.scrollTop<5500)){
+	if ((document.body.scrollTop>2100+gap)&(document.body.scrollTop<2800+gap)){
+		p.image(timeline, 42, 670,timeline.width/1.8,timeline.height/1.8);
 		bs_510.move(g_b[0],10,58,82);
 		bs_610.move(g_b[1],40,58,82);
 		bs_710.move(g_b[2],130,58,82);
@@ -73,7 +86,8 @@ p.draw=function(){
 		bs_1111.move(g_b[6],235,48,82);
 	}
 
-	if ((document.body.scrollTop>5500)&(document.body.scrollTop<6000)){
+	if ((document.body.scrollTop>2800+gap)&(document.body.scrollTop<3200+gap)){
+		p.image(timeline2, 72, 1270,timeline2.width/1.8,timeline2.height/1.8);
 		bs_510.move(g_c[0],10,58,82);
 		bs_610.move(g_c[1],40,58,82);
 		bs_710.move(g_c[2],130,58,82);
@@ -83,7 +97,7 @@ p.draw=function(){
 		bs_1111.move(g_c[6],265,68,82);
 	}
 
-	if (document.body.scrollTop>6000){
+	if (document.body.scrollTop>3200+gap){
 		bs_1111.move(g_d,265,68,82);
 	}
 	p.push();
@@ -239,26 +253,26 @@ p.iniGroup=function(){
 	//======================
 
 	for (var i = 0; i < data[0]; i++) {
-		g_c[0].push(p.createVector((i%15*12+60),(Math.floor(i/15)*12)+1200));
+		g_c[0].push(p.createVector((i%15*12+60),(Math.floor(i/15)*12)+1300));
 	}
 
 	for (var i = 0; i < data[1]; i++) {
-		g_c[1].push(p.createVector(((i+data[0]-3)%15*12+60),(Math.floor((i+data[0]-3)/15)*12)+1220));
+		g_c[1].push(p.createVector(((i+data[0]-3)%15*12+60),(Math.floor((i+data[0]-3)/15)*12)+1320));
 	}
 	for (var i = 0; i < data[2]; i++) {
-		g_c[2].push(p.createVector(((i+data[0]+data[1]-5)%15*12+60),(Math.floor((i+data[0]+data[1]-5)/15)*12)+1240));
+		g_c[2].push(p.createVector(((i+data[0]+data[1]-5)%15*12+60),(Math.floor((i+data[0]+data[1]-5)/15)*12)+1340));
 	}
 	for (var i = 0; i < data[3]; i++) {
-		g_c[3].push(p.createVector((i%15*12+230+70),(Math.floor(i/15)*12)+1200));
+		g_c[3].push(p.createVector((i%15*12+230+70),(Math.floor(i/15)*12)+1300));
 	}
 	for (var i = 0; i < data[4]; i++) {
-		g_c[4].push(p.createVector(((i+data[3]-7)%15*12+230+70),(Math.floor((i+data[3]-7)/15)*12)+1220));
+		g_c[4].push(p.createVector(((i+data[3]-7)%15*12+230+70),(Math.floor((i+data[3]-7)/15)*12)+1320));
 	}
 	for (var i = 0; i < data[5]; i++) {
-		g_c[5].push(p.createVector((i%15*12+780),(Math.floor(i/15)*12)+1200));
+		g_c[5].push(p.createVector((i%15*12+780),(Math.floor(i/15)*12)+1300));
 	}
 	for (var i = 0; i < data[6]; i++) {
-		g_c[6].push(p.createVector((i%15*12+970),(Math.floor(i/15)*12)+1200));
+		g_c[6].push(p.createVector((i%15*12+970),(Math.floor(i/15)*12)+1300));
 	}
 	// ===================
 

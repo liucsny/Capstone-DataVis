@@ -7,8 +7,13 @@ html {
     width: 100%;
     height: 100%;
 }
+
 .p5js{
     align-content: center;
+}
+.chart{
+    padding-top: 80px;
+    padding-bottom: : 130px;
 }
 
 #bigtitle{
@@ -52,15 +57,33 @@ html {
     padding: 0;
 }
 
+.title{
+    font-family: sans-serif;
+    text-align:left;
+    font-weight: 800;
+    font-size: 28px;
+    padding-bottom: 15px;
+    color:#393939;
+}
 .main_text{
     font-family: sans-serif;
     font-weight: 300;
-    font-size: 13px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 26px;
     padding-bottom: 10px;
     text-align: left;
     color:#6B6B6B;
 }
+.text{
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 26px;
+    padding-bottom: 10px;
+    text-align: left;
+    color:#424242;
+}
+
 .page-scroll{
     color: white;
 }
@@ -73,8 +96,8 @@ html {
 }
 
 .main_container{
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 10%;
+    padding-bottom: 15%;
 }
 .caption{
     font-family: sans-serif;
@@ -105,7 +128,23 @@ html {
     color:#ffffff;
 }
 
+.float_text_1{
+    position: absolute;
+    top: -2500px;
+}
 
+.float_text_2{
+    position: absolute;
+    top: -1650px;
+}
+.float_text_3{
+    position: absolute;
+    top: -1050px;
+}
+.float_text_4{
+    position: absolute;
+    top: -200px;
+}
 
 
 
