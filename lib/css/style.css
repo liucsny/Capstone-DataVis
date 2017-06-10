@@ -19,6 +19,23 @@ html {
   border-radius: 3px;
 
 }
+.but{
+    width:100px;
+    font-size: 12px;
+    line-height:2;
+    color: #4C8AE5;
+    background: rgba(0,0,0,0);
+    border: solid 2px #4C8AE5;
+}
+.but:hover{
+  background: #4C8AE5;
+  border-color: #4C8AE5;
+  color: white;
+}
+.but:active {
+    background: #0B6FFF;
+    border-color: #0B6FFF;
+}
 
 .p5js{
     align-content: center;
@@ -156,6 +173,10 @@ html {
 .float_text_4{
     position: absolute;
     top: -200px;
+}
+
+.dark{
+    background: black;
 }
 
 
