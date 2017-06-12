@@ -9,6 +9,8 @@ html {
 }
 
 footer {
+    padding-top:7%;
+    padding-bottom:7%;
     background: #212121;
 }
 img {
@@ -54,10 +56,10 @@ img {
 }
 
 #bigtitle{
-    padding-top: 90%;
+    padding-top: 80%;
     text-align: left;
     font-family: sans-serif;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 800;
     color: #FFFFFF;
     line-height: 50px;
@@ -65,7 +67,7 @@ img {
 #thintitle{
     text-align: left;
     font-family: sans-serif;
-    font-size: 40px;
+    font-size: 24px;
     font-weight: 0;
     color: #FFFFFF;
 }
@@ -74,12 +76,13 @@ img {
     text-align: left;
     font-family: sans-serif;
     font-weight: 300;
-    font-size: 13px;
-    line-height: 24px;
+    font-size: 12px;
+    line-height: 20px;
     color: #FFFFFF;
 }
 #landingimg{
     padding-top: 5%;
+    left:4%;
 }
 
 .navbar {
@@ -192,10 +195,11 @@ img {
 }
 .title_w{
     font-family: sans-serif;
-    text-align:left;
-    font-weight: 800;
-    font-size: 28px;
-    padding-bottom: 15px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 20px;
+    padding-bottom: 10px;
+    text-align: left;
     color:#C1C1C1;
 }
 .main_text_w{
