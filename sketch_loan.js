@@ -3,15 +3,14 @@ var loanChartCanvas=function(p){
 var timer=0;
 var loanChart=[];
 var t;
-var gap=0;
+var gap=-500;
 
 p.preload=function() {
 	t = p.loadTable("lib/data/news.csv", "csv", "header");
 }
 
 p.setup=function(){
-	myCanvas = p.createCanvas(1170, 1100);
-    p.background(255,255,255);
+	myCanvas = p.createCanvas(1170, 600);
     for(var i=0;i<19;i++){
 	    p.append(loanChart,new p.loanChart(t,0,0,1100,500, p.map(i,0,26,0.9,1),p.random(20)));
     }
@@ -140,10 +139,10 @@ p.setup=function(){
 }
 
 p.draw=function(){
-	p.print(document.body.scrollTop);
-	p.background(255,255,255);
+	// p.print(document.body.scrollTop);
+	p.background("#EAEADA");
 
-	if(document.body.scrollTop+gap>13400){
+	if(document.body.scrollTop+gap>14500){
 		for(var i=0;i<19;i++){
 	    	loanChart[i].update(i+1,7,6,4,5,4,1);
 	    }
@@ -154,7 +153,7 @@ p.draw=function(){
 	}
 
 
-	if(((document.body.scrollTop+gap-13400)*(document.body.scrollTop+gap-13400))<0){
+	if(((document.body.scrollTop+gap-14500)*(document.body.scrollTop+gap-14500))<0){
 		timer=0;
 	}
 
@@ -168,6 +167,7 @@ p.draw=function(){
 
 
 p.loanChart=function(t,x,y,w,h,s,clock){
+	this.type;
 	this.isOver=false;
 
 	this.table=t;
@@ -229,18 +229,26 @@ p.loanChart=function(t,x,y,w,h,s,clock){
 
 			p.noFill();
 			if(this.isOver) {
-				p.stroke(0,100,0,200);
-				p.strokeWeight(2);
-			}else{
 				p.stroke(0,0,0,200);
-				p.strokeWeight(1);
+			}else{
+				p.stroke(0,0,0,100);
 			}
 			p.bezier(this.x_l_o,this.y_l_o,this.x_l_o,this.y_l_o+this.h_o/3*2 ,this.x_s_o,this.y_s_o-this.h_o/2,this.x_s_o,this.y_s_o);
 
 			if(this.isOver) {
-				p.fill(200,0,0,100);
+				if(this.table.getNum(this.type,1)==0){
+					p.fill(255,97,169,100);
+				}else{
+					p.fill(73,206,206,150);	
+				}
+
 			}else{
-				p.fill(0,0,0,50);
+				if(this.table.getNum(this.type,1)==0){
+					p.fill(255,97,169,50);
+				}else{
+					p.fill(73,206,206,100);
+				}
+
 			}
 
 			p.noStroke();
@@ -274,6 +282,7 @@ p.loanChart=function(t,x,y,w,h,s,clock){
 
 	this.update=function(type,debt,ori,t_loan,t_repay,core){
 		// this.timer=t;
+		this.type=type;
 		this.core_c=core;
 		this.r_l_c=p.sqrt(p.map(this.table.getNum(type,debt),0,700000,0,15000));
 		this.r_s_c=p.sqrt(p.map(this.table.getNum(type,ori),0,700000,0,15000));
@@ -289,11 +298,6 @@ p.loanChart=function(t,x,y,w,h,s,clock){
 
 		// p.print(this.x_s_o);
 	}
-
-
-	// this.changecol=function(){
-	// 	this.col=p.color(0,100,250,100);
-	// }
 }
 
 

@@ -51,7 +51,7 @@ p.draw=function(){
 	bs_1010.run();
 	bs_1111.run();
 
-	if (document.body.scrollTop<1840+gap){
+	if (document.body.scrollTop<2000+gap){
 		// p.ellipse(100,100,100,100);
 		bs_510.move(g_a[0],200,78,85);
 		bs_610.move(g_a[1],200,78,85);
@@ -62,7 +62,7 @@ p.draw=function(){
 		bs_1111.move(g_a[6],200,78,85);
 	}
 
-	if ((document.body.scrollTop>1840+gap)&(document.body.scrollTop<2100+gap)){
+	if ((document.body.scrollTop>2000+gap)&(document.body.scrollTop<2300+gap)){
 	    p.image(timeimg, 40, 90,timeimg.width/1.7,timeimg.height/1.7);
 		// p.ellipse(100,100,100,100);
 		bs_510.move(g_a[0],10,58,82);
@@ -75,7 +75,7 @@ p.draw=function(){
 	}
 
 
-	if ((document.body.scrollTop>2100+gap)&(document.body.scrollTop<2800+gap)){
+	if ((document.body.scrollTop>2300+gap)&(document.body.scrollTop<3000+gap)){
 		p.image(timeline, 42, 670,timeline.width/1.8,timeline.height/1.8);
 		bs_510.move(g_b[0],10,58,82);
 		bs_610.move(g_b[1],40,58,82);
@@ -86,7 +86,7 @@ p.draw=function(){
 		bs_1111.move(g_b[6],235,48,82);
 	}
 
-	if ((document.body.scrollTop>2800+gap)&(document.body.scrollTop<3200+gap)){
+	if ((document.body.scrollTop>3000+gap)&(document.body.scrollTop<3600+gap)){
 		p.image(timeline2, 72, 1270,timeline2.width/1.8,timeline2.height/1.8);
 		bs_510.move(g_c[0],10,58,82);
 		bs_610.move(g_c[1],40,58,82);
@@ -97,7 +97,7 @@ p.draw=function(){
 		bs_1111.move(g_c[6],265,68,82);
 	}
 
-	if (document.body.scrollTop>3200+gap){
+	if (document.body.scrollTop>3600+gap){
 		bs_1111.move(g_d,265,68,82);
 	}
 	p.push();

@@ -32,17 +32,28 @@ p.setup=function(){
 
     // myDiv = p.createDiv('this is some text');
 
+	myP1 = p.createP("我想了解 <strong style='text-decoration:underline;''>性别:</strong>");
+	myP1.position(110,16);
+	myP1.addClass('line_title');
+
+	myP2 = p.createP("<strong style='text-decoration:underline;''>年龄:</strong>");
+	myP2.position(280,16);
+	myP2.addClass('line_title');
+
+	myP3 = p.createP("人群的数据");
+	myP3.position(420,16);
+	myP3.addClass('line_title');
 
 	sel = p.createSelect();
 	sel.class("gender")
-	sel.position(100, 10);
+	sel.position(220, 10);
 	sel.option('女');
 	sel.option('男');
 	sel.changed(p.mySelectEvent_g);
 
 	sel_a = p.createSelect();
 	sel_a.class("gender")
-	sel_a.position(260, 10);
+	sel_a.position(320, 10);
 	sel_a.option('18~25岁');
 	sel_a.option('25～30岁');
 	sel_a.option('30～35岁');
@@ -50,6 +61,8 @@ p.setup=function(){
 	sel_a.option('40～50岁');
 	sel_a.option('大于50岁');
 	sel_a.changed(p.mySelectEvent_g);
+
+
 
 }
 
@@ -69,9 +82,9 @@ p.draw=function(){
 	
 	// line.update(1);
 	if(gender=='女'){
-		p.image(img_1, 150, 80,900,490);
+		p.image(img_1, 100, 80,950,490);
 	}else{
-		p.image(img_2, 150, 80,900,490);
+		p.image(img_2, 100, 80,950,490);
 	}
 
 	line_p.display(1.5);
@@ -123,9 +136,18 @@ p.draw=function(){
 	p.strokeWeight(1.5);
 	p.stroke("#DDDDDD");
 	p.noFill();
-	p.rect(70,65,1030,520);
+	p.rect(70,65,1030,530);
 
+	p.stroke("#D6D6D6");
+	p.line(100,560,1080,560);
 
+	p.noStroke();
+	p.fill(155);
+	p.text("5.11",90,578);
+
+	p.noStroke();
+	p.fill(155);
+	p.text("11.11",1060,578);
 }
 
 
