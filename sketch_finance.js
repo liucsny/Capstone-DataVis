@@ -3,11 +3,13 @@ var financeCanvas=function(p){
 var t;
 var chart;
 var sw=false;
+var img;
 // var myVideo;
 // var playing = false;
 
 p.preload=function() {
 	t = p.loadTable("lib/data/f_p.csv", "csv", "header");
+	img = p.loadImage("lib/data/bg3.png");
 }
 
 p.setup=function(){
@@ -17,17 +19,20 @@ p.setup=function(){
     // myVideo.loop();
 
 
-	myCanvas = p.createCanvas(1170, 600);
+	myCanvas = p.createCanvas(1170, 550);
     chart = new p.Fsys(t);
 
 	b_1 = p.createButton('按人数');
-	b_1.position(900, 120);
+	b_1.position(130, -60);
 	b_1.mousePressed(p.s1);
 	b_1.addClass("but");
 	b_2 = p.createButton('按金额');
-	b_2.position(900, 170);
+	b_2.position(250, -60);
 	b_2.mousePressed(p.s2);
 	b_2.addClass("but");
+
+	myP=p.createP("选择视角：");
+	myP.position(40,-50);
 
 }
 
@@ -45,6 +50,7 @@ p.draw=function(){
 	// }
 
     p.background(255,255,255);
+    p.image(img, 0, 20,950,510);
 	chart.run();
 	
 	if(sw){
@@ -110,7 +116,7 @@ p.square=function(t,x,y,i,j,c){
 	this.table=t;
 	this.pos_c = p.createVector(x,y);
 	// this.pos_o = p.createVector(x,y);
-	this.w=13;
+	this.w=12;
 	this.h_o=0;
 	this.h_c=0;
 	// this.b=0;
