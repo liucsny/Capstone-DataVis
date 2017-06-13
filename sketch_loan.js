@@ -3,7 +3,7 @@ var loanChartCanvas=function(p){
 var timer=0;
 var loanChart=[];
 var t;
-var gap=-500;
+var gap=-5300;
 
 p.preload=function() {
 	t = p.loadTable("lib/data/news.csv", "csv", "header");
