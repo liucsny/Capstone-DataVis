@@ -4,9 +4,11 @@ var timer=0;
 var loanChart=[];
 var t;
 var gap=-5300;
+var img;
 
 p.preload=function() {
 	t = p.loadTable("lib/data/news.csv", "csv", "header");
+	img = p.loadImage("lib/data/bg4.png");
 }
 
 p.setup=function(){
@@ -141,6 +143,7 @@ p.setup=function(){
 p.draw=function(){
 	// p.print(document.body.scrollTop);
 	p.background(255);
+    p.image(img, 0, 80,1080,480);
 
 	if(document.body.scrollTop+gap>14500){
 		for(var i=0;i<19;i++){
