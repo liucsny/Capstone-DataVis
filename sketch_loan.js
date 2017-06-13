@@ -140,7 +140,7 @@ p.setup=function(){
 
 p.draw=function(){
 	// p.print(document.body.scrollTop);
-	p.background("#EAEADA");
+	p.background(255);
 
 	if(document.body.scrollTop+gap>14500){
 		for(var i=0;i<19;i++){

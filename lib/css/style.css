@@ -191,22 +191,21 @@ img {
 }
 
 .loan{
-    background: #EAEADA;
+    background: white;
 }
 .title_w{
     font-family: sans-serif;
-    font-weight: 300;
-    font-size: 15px;
-    line-height: 20px;
-    padding-bottom: 10px;
-    text-align: left;
+    text-align:left;
+    font-weight: 800;
+    font-size: 28px;
+    padding-bottom: 15px;
     color:#C1C1C1;
 }
 .main_text_w{
     font-family: sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 26px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
     padding-bottom: 10px;
     text-align: left;
     color:#C1C1C1;
